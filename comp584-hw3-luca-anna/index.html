@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Summer Sale Email Campaign</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<style type="text/css">
+      /* CLIENT-SPECIFIC STYLES */
+			body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+			table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+			img { -ms-interpolation-mode: bicubic; }
+
+			/* RESET STYLES */
+			img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+			table { border-collapse: collapse !important; }
+			body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+
+			/* iOS BLUE LINKS */
+			a[x-apple-data-detectors] {
+			    color: inherit !important;
+			    text-decoration: none !important;
+			    font-size: inherit !important;
+			    font-family: inherit !important;
+			    font-weight: inherit !important;
+			    line-height: inherit !important;
+			}
+
+			/* GMAIL BLUE LINKS */
+			u + #body a {
+			    color: inherit;
+			    text-decoration: none;
+			    font-size: inherit;
+			    font-family: inherit;
+			    font-weight: inherit;
+			    line-height: inherit;
+			}
+
+			/* SAMSUNG MAIL BLUE LINKS */
+			#MessageViewBody a {
+			    color: inherit;
+			    text-decoration: none;
+			    font-size: inherit;
+			    font-family: inherit;
+			    font-weight: inherit;
+			    line-height: inherit;
+			}
+
+			/* Universal styles for links and stuff */
+			/* Progressive enhancement only - every style that matters is also inline,
+			   because many clients strip the <head> or embedded CSS entirely. */
+
+			/* Responsive styles */
+			@media screen and (max-width: 600px) {
+				.fixed-table { width: 100% !important; }
+				.pad-side { padding-left: 20px !important; padding-right: 20px !important; }
+				/* No full-width button stacking: the border-based button adds its own
+				   64px of horizontal border, so width:100% would overflow the column
+				   and pull the button off centre. The buttons are already large enough. */
+			}
+		</style>
+	</head>
+	<body id="body" style="margin: 0 !important; padding: 0 !important; background-color: #eeeeee; font-family: Arial, Helvetica, sans-serif;">
+
+		<!-- ============================================================
+		     SINGLE COLUMN TABLE LAYOUT
+		     Outer table = fluid (width 100%), inner table = fixed 600px.
+		     role="presentation" on BOTH tables keeps the tables "quiet"
+		     so screen readers do not announce them as data tables.
+		     border/cellpadding/cellspacing = 0 so we control all whitespace.
+		     ============================================================ -->
+		<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #eeeeee;">
+			<tr>
+				<td align="center" valign="top" style="padding: 0;">
+
+					<!-- Fixed inner table: the recommended 600px width -->
+					<table role="presentation" class="fixed-table" border="0" cellpadding="0" cellspacing="0" width="600" style="width: 600px; max-width: 600px; background-color: #ffffff;">
+
+						<!-- ROW 1: Logo -->
+						<tr>
+							<td align="center" valign="middle" bgcolor="#1f3a5f" style="padding: 20px 30px; background-color: #1f3a5f;">
+								<span style="color: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; letter-spacing: 2px;">LOREM STORE</span>
+							</td>
+						</tr>
+
+						<!-- ROW 2: Headline over a BACKGROUND IMAGE
+						     Three layers so it degrades gracefully:
+						       1. background="..."  -> HTML attribute for older clients
+						       2. bgcolor="#1f3a5f" -> fallback color when images are blocked
+						       3. style="background: ..." -> CSS for newer clients
+						     Text stays LIVE HTML text on top, never baked into the image. -->
+						<tr>
+							<td align="center" valign="middle"
+							    background="images/bg-texture.jpg"
+							    bgcolor="#1f3a5f"
+							    class="pad-side"
+							    style="padding: 40px 30px; background-color: #1f3a5f; background-image: url('images/bg-texture.jpg'); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+								<h1 style="margin: 0; color: #ffffff; font-family: Arial, Helvetica, sans-serif; font-size: 30px; line-height: 36px; font-weight: bold;">Our Summer Sale Is Here</h1>
+								<h2 style="margin: 12px 0 0 0; color: #ffe9d6; font-family: Arial, Helvetica, sans-serif; font-size: 18px; line-height: 24px; font-weight: normal;">Save up to 40% on everything</h2>
+							</td>
+						</tr>
+
+						<!-- ROW 3: RESPONSIVE HERO IMAGE
+						     width="540" HTML attribute -> Outlook needs a fixed width.
+						     Inline styles do the responsive work without relying on the <head>:
+						       display: block  -> removes the gap under the image
+						       max-width: 100% -> never breaks out of the 600px container
+						       min-width: 100px -> sane floor on small screens
+						       width: 100%     -> scales with the container
+						       height: auto    -> keeps the aspect ratio
+						     alt text describes WHAT IS HAPPENING in the image. -->
+						<tr>
+							<td align="center" valign="top" class="pad-side" style="padding: 30px 30px 20px 30px;">
+								<img src="images/hero-summer-sale.jpg"
+								     alt="The sun setting over the ocean behind two palm trees on an empty beach"
+								     width="540"
+								     style="display: block; width: 100%; min-width: 100px; max-width: 540px; height: auto; border: 0;">
+							</td>
+						</tr>
+
+						<!-- ROW 4: Body copy - LEFT ALIGNED for readability,
+						     generous font-size and line-height. -->
+						<tr>
+							<td align="left" valign="top" class="pad-side" style="padding: 10px 30px 20px 30px;">
+								<h3 style="margin: 0 0 12px 0; color: #1f3a5f; font-family: Arial, Helvetica, sans-serif; font-size: 20px; line-height: 26px;">Lorem ipsum dolor sit amet</h3>
+								<p style="margin: 0 0 16px 0; color: #444444; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px;">
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+									nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+								</p>
+								<p style="margin: 0; color: #444444; font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px;">
+									Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+									eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+									in culpa qui officia deserunt mollit anim id est laborum.
+								</p>
+							</td>
+						</tr>
+
+						<!-- ROW 5: PRIMARY BUTTON - padding + border approach
+						     Of the approaches we looked at, this one works in the most clients:
+						       - padding-only  -> some versions of Outlook drop the padding
+						       - border-only   -> works in some clients, not across all
+						       - padding+border -> broadest support (used here)
+						       - VML "bulletproof" (buttons.cm) -> widest support of all, but
+						         the extra markup is harder to maintain and customize
+						     The button cell carries the border-radius + bgcolor; the anchor
+						     carries the thick borders + padding so the tap target stays big
+						     even if one of the two is stripped.
+						     Centered with align="center" on the cell AND on the button table. -->
+						<tr>
+							<td align="center" valign="top" class="pad-side" style="padding: 10px 30px 20px 30px;">
+								<table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center">
+									<tr>
+										<td align="center" bgcolor="#a24a12" style="background-color: #a24a12; border-radius: 4px;">
+											<a href="https://example.com/summer-sale"
+											   style="display: inline-block; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #ffffff; text-decoration: none; background-color: #a24a12; border-radius: 4px; border-top: 16px solid #a24a12; border-bottom: 16px solid #a24a12; border-left: 32px solid #a24a12; border-right: 32px solid #a24a12; padding: 0;">Shop the summer sale</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<!-- ROW 6: SECONDARY BUTTON - padding based approach (ghost button)
+						     Same component, different technique, so the two can be compared.
+						     All of the structure lives on the <td>; the anchor only carries
+						     type styles. The 44px+ tap target comes from the cell padding. -->
+						<tr>
+							<td align="center" valign="top" class="pad-side" style="padding: 0 30px 30px 30px;">
+								<table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center">
+									<tr>
+										<td align="center" bgcolor="#ffffff" style="padding: 14px 30px; background-color: #ffffff; border-radius: 4px; border: 2px solid #1f3a5f;">
+											<a href="https://example.com/lookbook"
+											   style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #1f3a5f; text-decoration: none;">Browse the summer lookbook</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+
+						<!-- ROW 7: Footer - always include an unsubscribe link!
+						     The unsubscribe link keeps BOTH color and underline so it is not
+						     signalled by color alone. -->
+						<tr>
+							<td align="center" valign="top" bgcolor="#f4f4f4" class="pad-side" style="padding: 20px 30px; background-color: #f4f4f4;">
+								<p style="margin: 0 0 8px 0; color: #595959; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;">
+									Lorem Store, 123 Lorem Street, Ipsum City, CA 90000
+								</p>
+								<p style="margin: 0; color: #595959; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px;">
+									You are receiving this because you signed up for our list.<br>
+									<a href="https://example.com/unsubscribe" style="color: #1f3a5f; text-decoration: underline;">Unsubscribe from Lorem Store email</a>
+								</p>
+							</td>
+						</tr>
+
+					</table>
+					<!-- end fixed 600px table -->
+
+				</td>
+			</tr>
+		</table>
+		<!-- end fluid outer table -->
+
+	</body>
+</html>

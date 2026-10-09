@@ -1,0 +1,135 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+ */
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Geneva, sans-serif;
+}
+a {
+	color: #2772B0;
+}
+.wrapper {
+	width: 97%;
+	max-width: 1200px;
+	margin: 0 auto;
+	float: none;
+	background-color: #fff;
+}
+
+div img {
+	width: 100%;
+	max-width: 225px; 
+}
+
+/* grid system -- mobile first! */
+/* flex contatiner */
+
+.row {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/* attribute selector to give some margin between columns and apply styles to flex items */
+
+[class*="col-"] {
+	margin-left: 4%;
+	flex: 0 0 92%;
+}
+
+/* Add background colors to see how much space each column is taking */
+
+.col-1 {
+	background-color: #A3CDD9;
+}
+
+.col-2 {
+	background-color: #FFFCE6;
+}
+
+.col-3 {
+	background-color: #F2CB39;
+}
+
+.col-4 {
+	background-color: #C4B8AE;
+}
+
+.col-small {
+	background-color: #E8D3E8;
+}
+
+/* Tablet Landscape Screen Sizes */
+@media only screen and (min-width: 480px)  {
+	
+  .col-1,
+  .col-2 {
+		flex: 0 0 44%;
+	}
+  
+	/* row 3: both items are full width on tablet */
+	.side,
+	.col-3,
+	.col-4 {
+		flex: 0 0 92%;
+	}
+
+	/* row 5: middle item goes full width and moves to the front */
+	.middle {
+		flex: 0 0 92%;
+		order: -1;
+	}
+
+	/* row 6: 3 items per row */
+	.col-small {
+		flex: 0 0 28%;
+	}
+
+}
+/* Desktop screen Sizes */
+@media only screen and (min-width: 768px) {
+  
+  
+ 	.col-1 {
+		flex: 0 0 20%;
+	}
+  
+  
+  
+	.col-2 {
+		flex: 0 0 44%;
+	}
+
+	/* row 3: 1 column wide (20%) + 3 columns wide (68%) */
+	.side {
+		flex: 0 0 20%;
+	}
+
+	.col-3 {
+		flex: 0 0 68%;
+	}
+
+	.col-4 {
+		flex: 0 0 92%;
+	}
+
+	/* row 5: middle item goes back to its normal spot */
+	.middle {
+		flex: 0 0 44%;
+		order: 0;
+	}
+
+	/* row 6: 5 items per row (5 x 4% margin + 5 x 15.2% = 96%) */
+	.col-small {
+		flex: 0 0 15.2%;
+	}
+
+}

@@ -1,0 +1,144 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+ */
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: Arial, Geneva, sans-serif;
+}
+a {
+	color: #2772B0;
+}
+.wrapper {
+	width: 97%;
+	max-width: 1200px;
+	margin: 0 auto;
+	float: none;
+	background-color: #fff;
+}
+
+div img {
+	width: 100%;
+	max-width: 225px; 
+}
+
+/* grid system, we start with mobile first! */
+/* This is the grid container. Every row gets 12 columns and they are all the same size */
+
+.row {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+
+	/* NEW: gap adds space between the boxes so we dont need margins anymore */
+	gap: 20px;
+
+	/* NEW: align-items stretch makes all the boxes in a row end up the same height */
+	align-items: stretch;
+
+	/* NEW: margin-bottom just adds some space between each row */
+	margin-bottom: 20px;
+}
+
+/* These are the grid items. On mobile every box takes up all 12 columns so its full width */
+
+[class*="col-"] {
+	grid-column: span 12;
+}
+
+/* Add background colors to see how much space each column is taking */
+
+.col-1 {
+	background-color: #A3CDD9;
+}
+
+.col-2 {
+	background-color: #FFFCE6;
+}
+
+.col-3 {
+	background-color: #F2CB39;
+}
+
+.col-4 {
+	background-color: #C4B8AE;
+}
+
+.col-small {
+	background-color: #E8D3E8;
+}
+
+/* NEW: Row 6 uses auto-fit to make as many columns as can fit, and minmax makes each one at least 140px wide. So the small boxes wrap down on their own */
+.row-small {
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+/* The small boxes only take up 1 spot instead of all 12 columns */
+.row-small .col-small {
+	grid-column: auto;
+}
+
+/* Tablet Landscape Screen Sizes */
+@media only screen and (min-width: 480px)  {
+
+	/* Rows 1 and 2 show 2 boxes per row, so each one is 6 columns wide */
+	.col-1,
+	.col-2 {
+		grid-column: span 6;
+	}
+
+	/* Rows 3 and 4 are full width on tablet so they take all 12 columns */
+	.side,
+	.col-3,
+	.col-4 {
+		grid-column: span 12;
+	}
+
+	/* Row 5 middle box goes full width and jumps to the front with order -1 */
+	.middle {
+		grid-column: span 12;
+		order: -1;
+	}
+
+}
+/* Desktop screen Sizes */
+@media only screen and (min-width: 768px) {
+
+	/* Rows 1 and 5 have boxes that are 3 columns wide each */
+	.col-1 {
+		grid-column: span 3;
+	}
+
+	/* Row 2 has 2 boxes and each one is 6 columns wide */
+	.col-2 {
+		grid-column: span 6;
+	}
+
+	/* Row 3 has 3 columns wide with also 9 columns wide */
+	.side {
+		grid-column: span 3;
+	}
+
+	.col-3 {
+		grid-column: span 9;
+	}
+
+	/* Row 4 is 12 columns wide, so the whole row */
+	.col-4 {
+		grid-column: span 12;
+	}
+
+	/* Row 5 middle box goes back to its normal spot, 3 + 6 + 3 adds up to 12 columns */
+	.middle {
+		grid-column: span 6;
+		order: 0;
+	}
+
+}
